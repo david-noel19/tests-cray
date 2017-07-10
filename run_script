@@ -45,4 +45,4 @@
 clear
 source ./sma1/sma1_run
 source ./sma2/sma2_run
-source ./smaf/smaf_run
+#source ./smaf/smaf_run
