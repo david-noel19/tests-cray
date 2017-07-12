@@ -42,12 +42,12 @@ user_setup() {
     if [ -z $CRAY_TEST_PATH ]; then export CRAY_TEST_PATH=$PWD/testbin; fi
     if [ -z $CRAY_TEST_FILE ]; then export CRAY_TEST_FILE=$PWD; fi
     if [ -z $NPES ]; then export NPES=28; fi
-    if [ -z $CC ]; then export CC=cc; fi
-    if [ -z $CXX ]; then export CXX=CC; fi
-    if [ -z $FTN ]; then export FTN=ftn; fi
-    if [ -z $LAUNCHER ]; then LAUNCHER=aprun; fi
+    if [ -z $CC ]; then export CC=oshcc; fi
+    if [ -z $CXX ]; then export CXX=oshCC; fi
+    if [ -z $FTN ]; then export FTN=oshfort; fi
+    if [ -z $LAUNCHER ]; then LAUNCHER=srun; fi
     if [ -z $CUSTOM_SHMEM_DIR ]; then
-      export CUSTOM_SHMEM_DIR="/lus/scratch/nravi/opt/sma"
+      export CUSTOM_SHMEM_DIR="HOME/tests-cray"
     fi
 }
 

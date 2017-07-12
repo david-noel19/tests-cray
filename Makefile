@@ -33,9 +33,9 @@
 #----------------------------------------------------------------------
 #
 
-.PHONY: all sma1 sma2 smaf
+.PHONY: all sma1 sma2 
 
-all: sma1 sma2 smaf
+all: sma1 sma2 
 
 c-only: sma1 sma2
 
@@ -44,9 +44,6 @@ sma1:
 
 sma2:
 	$(MAKE) $(MAKE_FLAGS) -C sma2 all
-
-smaf:
-	$(MAKE) $(MAKE_FLAGS) -C smaf all
 
 clean:
 	rm -rf testbin/
