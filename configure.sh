@@ -43,7 +43,7 @@ user_setup() {
     if [ -z $CRAY_TEST_FILE ]; then export CRAY_TEST_FILE=$PWD; fi
     if [ -z $NPES ]; then export NPES=28; fi
     if [ -z $CC ]; then export CC=oshcc; fi
-    if [ -z $CXX ]; then export CXX=oshCC; fi
+    if [ -z $CXX ]; then export CXX=oshcc; fi
     if [ -z $FTN ]; then export FTN=oshfort; fi
     if [ -z $LAUNCHER ]; then LAUNCHER=srun; fi
     if [ -z $CUSTOM_SHMEM_DIR ]; then
@@ -53,7 +53,7 @@ user_setup() {
 
 default_config() {
     if [ ! -z "$CUSTOM_SHMEM_DIR" ]; then
-        export CFLAGS+="   -I${CUSTOM_SHMEM_DIR}/include/ "
+        export CFLAGS+="-DOPENSHMEM   -I${CUSTOM_SHMEM_DIR}/include/ "
         export CXXFLAGS+=" -I${CUSTOM_SHMEM_DIR}/include/ "
         export FFLAGS+="   -I${CUSTOM_SHMEM_DIR}/include/ "
         export FCFLAGS+="  -I${CUSTOM_SHMEM_DIR}/include/ "

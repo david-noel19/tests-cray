@@ -75,7 +75,7 @@ TESTS= \
 all:	$(TESTS)
 
 $(TESTS): %:	%.c
-	-$(CC) $(CFLAGS) -o $(CRAY_TEST_BUILD_BIN)/sma1/$@ $< $(CLIBS) \
+	-$(CC) $(CFLAGS) -o $(CRAY_TEST_BUILD_BIN)/sma1/$@ $< \
 		> $(CRAY_TEST_BUILD_OUT)/sma1/$@ 2>&1
 
 clean:
